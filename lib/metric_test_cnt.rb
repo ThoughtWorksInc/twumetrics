@@ -8,9 +8,10 @@ class MetricTestCnt
   end
 
   def cmd path, date
-    return "grep -r --exclude=\"*\.svn*\" @Ignore #{path}/src/test/java/* | wc -l" if @test_path.eql?("test")
+    grepCmd = "grep -r --exclude=\"*\.svn*\""
     
-    "grep -r --exclude=\"*\.svn*\" @Test #{path}/src/test/java/#{@test_path}/* | wc -l"
+    return grepCmd +" @Ignore #{path}/src/test/java/* | wc -l" if @test_path.eql?("test")
+    grepCmd + " @Test #{path}/src/test/java/#{@test_path}/* | wc -l"
   end
 
 end
