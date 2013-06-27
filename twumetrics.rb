@@ -1,11 +1,12 @@
 require 'date'
 require 'choice'
+
 Dir["./lib/*.rb"].each {|file | require file }
 
 Choice.options do
   header ''
 
-  option :path, required: true do
+  option :path do
     short '-p'
     long '--path=PATH'
     desc 'path to svn repository. Required!'

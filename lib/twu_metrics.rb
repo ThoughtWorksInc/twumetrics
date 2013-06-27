@@ -8,6 +8,7 @@ class TWUMetrics
         MetricTestCnt.new("unit", "com"),
         MetricTestCnt.new("integration", "integration"),
         MetricTestCnt.new("functional", "functional"),
+        MetricTestCnt.new("ignored", "test"),
     ]
 
     puts header(metrics)
